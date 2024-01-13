@@ -1,0 +1,9 @@
+package com.kwizera.ibrahim.adminPanel.repository;
+
+import com.kwizera.ibrahim.adminPanel.entity.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends CrudRepository<User,Long> {
+}
