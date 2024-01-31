@@ -3,12 +3,10 @@ package com.kwizera.ibrahim.adminPanel.service.impl;
 import com.kwizera.ibrahim.adminPanel.dto.Mapper;
 import com.kwizera.ibrahim.adminPanel.dto.requestDto.CategoryRequestDto;
 import com.kwizera.ibrahim.adminPanel.dto.responseDto.CategoryResponseDto;
-import com.kwizera.ibrahim.adminPanel.entity.Book;
 import com.kwizera.ibrahim.adminPanel.entity.Category;
 import com.kwizera.ibrahim.adminPanel.repository.CategoryRepository;
 import com.kwizera.ibrahim.adminPanel.service.CategoryService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +17,7 @@ import java.util.stream.StreamSupport;
 public class CategoryServiceImpl implements CategoryService {
     private  final CategoryRepository categoryRepository;
 
-    @Autowired
+    //@Autowired
     public CategoryServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }

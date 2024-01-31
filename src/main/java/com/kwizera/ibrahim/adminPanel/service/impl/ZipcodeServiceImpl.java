@@ -7,7 +7,6 @@ import com.kwizera.ibrahim.adminPanel.repository.ZipcodeRepository;
 import com.kwizera.ibrahim.adminPanel.service.CityService;
 import com.kwizera.ibrahim.adminPanel.service.ZipcodeService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +19,7 @@ public class ZipcodeServiceImpl implements ZipcodeService {
     private final ZipcodeRepository zipcodeRepository;
     private final CityService cityService;
 
-    @Autowired
+    //@Autowired
     public ZipcodeServiceImpl(ZipcodeRepository zipcodeRepository, CityService cityService) {
         this.zipcodeRepository = zipcodeRepository;
         this.cityService = cityService;

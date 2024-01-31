@@ -11,7 +11,6 @@ import com.kwizera.ibrahim.adminPanel.service.AuthorService;
 import com.kwizera.ibrahim.adminPanel.service.BookService;
 import com.kwizera.ibrahim.adminPanel.service.CategoryService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class BookServiceImpl implements BookService {
     private final AuthorService authorService;
     private final CategoryService categoryService;
 
-    @Autowired
+    //@Autowired
     public BookServiceImpl(BookRepository bookRepository, AuthorService authorService, CategoryService categoryService) {
         this.bookRepository = bookRepository;
         this.authorService = authorService;

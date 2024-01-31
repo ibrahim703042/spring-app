@@ -9,7 +9,6 @@ import com.kwizera.ibrahim.adminPanel.repository.AuthorRepository;
 import com.kwizera.ibrahim.adminPanel.service.AuthorService;
 import com.kwizera.ibrahim.adminPanel.service.ZipcodeService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +21,7 @@ public class AuthorServiceImpl implements AuthorService {
     private final AuthorRepository authorRepository;
     private final ZipcodeService zipcodeService;
 
-    @Autowired
+    //@Autowired
     public AuthorServiceImpl(AuthorRepository authorRepository, ZipcodeService zipcodeService) {
         this.authorRepository = authorRepository;
         this.zipcodeService = zipcodeService;
@@ -75,7 +74,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public AuthorResponseDto deleteAuthor(Long authorID) {
-        Author author = getAuthor(authorID);
+    Author author = getAuthor(authorID);
         authorRepository.delete(author);
         return Mapper.authorToAuthorResponseDto(author);
     }

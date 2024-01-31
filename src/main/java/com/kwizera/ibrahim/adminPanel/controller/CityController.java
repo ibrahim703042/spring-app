@@ -3,7 +3,6 @@ package com.kwizera.ibrahim.adminPanel.controller;
 import com.kwizera.ibrahim.adminPanel.dto.requestDto.CityRequestDto;
 import com.kwizera.ibrahim.adminPanel.entity.City;
 import com.kwizera.ibrahim.adminPanel.service.CityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ public class CityController {
 
     private final CityService cityService;
 
-    @Autowired
+    //@Autowired
     public CityController(CityService cityService) {
         this.cityService = cityService;
     }

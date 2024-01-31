@@ -3,7 +3,6 @@ package com.kwizera.ibrahim.adminPanel.controller;
 import com.kwizera.ibrahim.adminPanel.dto.requestDto.CategoryRequestDto;
 import com.kwizera.ibrahim.adminPanel.dto.responseDto.CategoryResponseDto;
 import com.kwizera.ibrahim.adminPanel.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @Autowired
+    //@Autowired
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }

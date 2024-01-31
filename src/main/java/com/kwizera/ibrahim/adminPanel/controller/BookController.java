@@ -3,7 +3,6 @@ package com.kwizera.ibrahim.adminPanel.controller;
 import com.kwizera.ibrahim.adminPanel.dto.requestDto.BookRequestDto;
 import com.kwizera.ibrahim.adminPanel.dto.responseDto.BookResponseDto;
 import com.kwizera.ibrahim.adminPanel.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ public class BookController {
 
     private final BookService bookService;
 
-    @Autowired
+    //@Autowired
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }

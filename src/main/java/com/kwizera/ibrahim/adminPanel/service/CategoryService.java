@@ -1,10 +1,8 @@
 package com.kwizera.ibrahim.adminPanel.service;
 
 import com.kwizera.ibrahim.adminPanel.dto.requestDto.CategoryRequestDto;
-import com.kwizera.ibrahim.adminPanel.dto.requestDto.ZipcodeRequestDto;
 import com.kwizera.ibrahim.adminPanel.dto.responseDto.CategoryResponseDto;
 import com.kwizera.ibrahim.adminPanel.entity.Category;
-import com.kwizera.ibrahim.adminPanel.entity.Zipcode;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
