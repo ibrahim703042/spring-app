@@ -9,6 +9,8 @@ import com.kwizera.ibrahim.adminPanel.repository.AuthorRepository;
 import com.kwizera.ibrahim.adminPanel.service.AuthorService;
 import com.kwizera.ibrahim.adminPanel.service.ZipcodeService;
 import jakarta.transaction.Transactional;
+import lombok.NonNull;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,7 +57,8 @@ public class AuthorServiceImpl implements AuthorService {
         return Mapper.authorToAuthorResponseDto(getAuthor(authorID));
     }
     @Override
-    public Author getAuthor(Long authorID) {
+    @NonNull
+    public Author getAuthor(@NonNull Long authorID) {
         return authorRepository.findById(authorID).orElseThrow(()
                 ->new IllegalArgumentException("Author with id: " + authorID + " could not be found"));
     }
@@ -71,10 +74,10 @@ public class AuthorServiceImpl implements AuthorService {
         }
         return Mapper.authorToAuthorResponseDto(author);
     }
-
+    
     @Override
-    public AuthorResponseDto deleteAuthor(Long authorID) {
-    Author author = getAuthor(authorID);
+    public AuthorResponseDto deleteAuthor(@NonNull Long authorID) {
+        Author author = getAuthor(authorID);
         authorRepository.delete(author);
         return Mapper.authorToAuthorResponseDto(author);
     }

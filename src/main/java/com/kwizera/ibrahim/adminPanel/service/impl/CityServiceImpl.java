@@ -5,6 +5,8 @@ import com.kwizera.ibrahim.adminPanel.entity.City;
 import com.kwizera.ibrahim.adminPanel.repository.CityRepository;
 import com.kwizera.ibrahim.adminPanel.service.CityService;
 import jakarta.transaction.Transactional;
+import lombok.NonNull;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -31,8 +33,9 @@ public class CityServiceImpl implements CityService {
         return cities;
     }
 
+    @NonNull
     @Override
-    public City getCity(Long cityID) {
+    public City getCity(@NonNull Long cityID) {
         return cityRepository.findById(cityID).orElseThrow(()
                 ->new IllegalArgumentException("City with cityId: " + cityID + " could not be found"));
     }

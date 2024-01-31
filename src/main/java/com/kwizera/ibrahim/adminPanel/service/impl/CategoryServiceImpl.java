@@ -7,6 +7,8 @@ import com.kwizera.ibrahim.adminPanel.entity.Category;
 import com.kwizera.ibrahim.adminPanel.repository.CategoryRepository;
 import com.kwizera.ibrahim.adminPanel.service.CategoryService;
 import jakarta.transaction.Transactional;
+import lombok.NonNull;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,8 +42,9 @@ public class CategoryServiceImpl implements CategoryService {
         return Mapper.categoryToCategoryResponseDtos(categories);
     }
 
+    @NonNull
     @Override
-    public Category getCategory(Long categoryID) {
+    public Category getCategory(@NonNull Long categoryID) {
         return categoryRepository.findById(categoryID).orElseThrow(()->
                 new IllegalArgumentException(
                         "Could not find category with id:" +categoryID

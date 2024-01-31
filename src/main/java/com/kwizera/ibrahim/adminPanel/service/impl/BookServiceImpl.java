@@ -11,6 +11,8 @@ import com.kwizera.ibrahim.adminPanel.service.AuthorService;
 import com.kwizera.ibrahim.adminPanel.service.BookService;
 import com.kwizera.ibrahim.adminPanel.service.CategoryService;
 import jakarta.transaction.Transactional;
+import lombok.NonNull;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -72,8 +74,9 @@ public class BookServiceImpl implements BookService {
          return Mapper.bookToBookResponseDto(book);
     }
 
+    @NonNull
     @Override
-    public Book getBook(Long bookID) {
+    public Book getBook(@NonNull Long bookID) {
         return bookRepository.findById(bookID).orElseThrow(() ->
                 new IllegalArgumentException("Can not find book with id:" + bookID));
     }

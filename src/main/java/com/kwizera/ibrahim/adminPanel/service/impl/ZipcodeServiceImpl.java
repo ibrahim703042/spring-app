@@ -7,6 +7,8 @@ import com.kwizera.ibrahim.adminPanel.repository.ZipcodeRepository;
 import com.kwizera.ibrahim.adminPanel.service.CityService;
 import com.kwizera.ibrahim.adminPanel.service.ZipcodeService;
 import jakarta.transaction.Transactional;
+import lombok.NonNull;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,8 +47,9 @@ public class ZipcodeServiceImpl implements ZipcodeService {
                 .collect(Collectors.toList());
     }
 
+    @NonNull
     @Override
-    public Zipcode getZipcode(Long zipcodeID) {
+    public Zipcode getZipcode(@NonNull Long zipcodeID) {
         return zipcodeRepository.findById(zipcodeID).orElseThrow(()
                 ->new IllegalArgumentException("Zipcode with zipcodeID: " + zipcodeID + " could not be found"));
     }
